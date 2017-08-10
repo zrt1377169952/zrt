@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <!--引入react-dom库-->
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <!--引入babel预编译库-->
+    <script src="node_modules/babel-standalone/babel.js"></script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+            height: 50px;
+            background-color: cornflowerblue;
+        }
+
+        #wrap-left {
+            float: left;
+            font-size: 20px;
+            color: white;
+            padding: 11px;
+        }
+        #wrap-left:hover{
+            background-color: aqua;
+        }
+        .a{
+            float: left;
+            margin-left: 25px;
+            color: white;
+            padding: 14px;
+        }
+        .a:hover{
+            background-color: aqua;
+        }
+
+        #wrap-right {
+            float: right;
+            margin-right: 50px;
+            color: white;
+            padding: 14px;
+
+        }
+        #wrap-right:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+  <div id="wrap"></div>
+</body>
+  <script type="text/babel">
+
+      var arr = ['编程','读书','Java教程','JavaScript教程','Python教程','Git教程','问答','赞助'];
+      var oWrap = document.getElementById('wrap');
+      var arr1 = [];
+      for (var i = 0;i <arr.length;i++){
+          arr1.push(<div className="a">{arr[i]}</div>)
+      }
+     const element = (
+             <div>
+                 <div id="wrap-left">廖雪峰的官方网站</div>
+                 {arr1}
+                 <div id="wrap-right">登录</div>
+             </div>
+     );
+      ReactDOM.render(element,oWrap)
+
+  </script>
+</html>
